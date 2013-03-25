@@ -11,8 +11,10 @@
 </p>
 
 <p>
-  <b>Price in cents:</b>
-  <%= @product.price_in_cents %>
+  <b>Price in dollars:</b>
+  <!-- Helpers are only available in the view -->
+  <!-- Defined a new helper (moving code out of here) in the products_helper -->
+  <%= product_price(@product) %>
 </p>
 
 
