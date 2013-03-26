@@ -38,5 +38,12 @@ class UserTest < ActiveSupport::TestCase
   	assert true
   end
 
+  test "must have password and confirmation on create user" do
+    user = FactoryGirl.build(:user)
+    user.password = ""
+    user.password_confirmation = ""
+
+    refute user.valid?
+  end
 
 end
