@@ -1,0 +1,21 @@
+<h3>Reviews</h3>
+
+<p style="font-style: italic;">Reviews for <%= @product.name %></p>
+
+<% @product.reviews.each do |review| %>
+	<div class="review" style="background: #EEE;">
+		<p><strong>Author:</strong> <%= review.user.name %><br>
+			<em>Submitted on <%= review.created_at.strftime("%m/%d/%Y") %> at <%= review.created_at.strftime("%I:%M%p)") %></em></p>
+
+		<p><strong>Review:</strong><br>
+		<%= review.comment %></p>
+	</div>
+<% end %>
+
+<p class="add-review">
+	<% if current_user %>
+		<%= render "reviews/form" %>
+	<% else %>
+		<p>To post a review, please log in or sign up below.</p>
+	<% end %>
+</p>
