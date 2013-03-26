@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  private
   # Available to controllers (because they inherit from here)
   def current_user
   	# If the session contains the user_id with non-nil, we have ID of some user
