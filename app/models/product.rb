@@ -5,6 +5,8 @@ class Product < ActiveRecord::Base
   validates :price_in_cents, :numericality => {:only_integer => true}
   validates :price_in_dollars, :numericality => true
 
+  has_many :reviews
+
   	def price_in_dollars
 	  	# integer => 2 decimal float
 		# Ruby function. Give formatting, then give data.
